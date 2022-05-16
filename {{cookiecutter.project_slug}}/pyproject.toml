@@ -5,11 +5,13 @@ description = "{{ cookiecutter.project_short_description }}"
 authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
 
 [tool.poetry.dependencies]
-python = ">={{ cookiecutter.python_version }}"
+python = ">={{ cookiecutter.python_version }},<3.11"
+kaleido = "0.2.1"
 mlflow = "*"
 orion = "*"
 tqdm = "*"
 "ruamel.yaml" = "*"
+scipy = "*"
 {%- if cookiecutter.dl_framework == 'pytorch' %}
 torch = "*"
 pytorch_lightning = "*"
