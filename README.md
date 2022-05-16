@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.com/mila-iqia/cookiecutter-pyml.svg?branch=master)](https://travis-ci.com/github/mila-iqia/cookiecutter-pyml)
+[![Build Status](https://api.travis-ci.com/mila-iqia/cookiecutter-pyml.svg?branch=master)](https://travis-ci.com/github/antoinelb/cookiecutter-pyml)
 
 About 
 -----
@@ -6,12 +6,16 @@ About
 A cookiecutter is a generic project template that will instantiate a new project with sane defaults. This repo contains our custom cookiecutter (`cookiecutter-pyml`) which will generate a new python deep learning package preconfigured with best practices in mind. It currently supports:
 
 * Pytorch/Tensorflow
-* Travis CI
+* Travis CI (CI/CD)
 * Sphinx (documentation)
 * MLFlow (experiment management)
 * Orion (hyperparameter optimization)
-* Flake8
-* Pytest
+* Flake8 (syntax check)
+* Black (auto-formatting)
+* Bandit (code safety check)
+* Safety (code dependencies check)
+* Mypy (type check)
+* Pytest (tests)
 
 More information on what a cookiecutter is [here.](https://cookiecutter.readthedocs.io)
 

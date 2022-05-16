@@ -5,10 +5,16 @@
   "project_name": "Wonderful Project",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "{{ cookiecutter.project_name }} is wonderful!",
-  "python_version": "3.8",
+  "python_version": "3.q0",
   "dl_framework": ["pytorch", "tensorflow_cpu", "tensorflow_gpu"],
-  "environment": ["generic", "mila"],
   "pypi_username": "{{ cookiecutter.github_username }}",
   "version": "0.0.1",
-  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
+  "open_source_license": [
+    "MIT license",
+    "BSD license",
+    "ISC license",
+    "Apache Software License 2.0",
+    "GNU General Public License v3",
+    "Not open source"
+  ]
 }

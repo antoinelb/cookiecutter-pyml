@@ -1,0 +1,72 @@
+[tool.poetry]
+name = "{{ cookiecutter.project_slug }}"
+version = "{{ cookiecutter.version }}"
+description = "{{ cookiecutter.project_short_description }}"
+authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
+
+[tool.poetry.dependencies]
+python = ">={{ cookiecutter.python_version }}"
+mlflow = "*"
+orion = "*"
+tqdm = "*"
+"ruamel.yaml" = "*"
+{%- if cookiecutter.dl_framework == 'pytorch' %}
+torch = "*"
+pytorch_lightning = "*"
+{%- endif %}
+{%- if cookiecutter.dl_framework == 'tensorflow_cpu' %}
+tensorflow = "*"
+{%- endif %}
+{%- if cookiecutter.dl_framework == 'tensorflow_gpu' %}
+tensorflow-gpu = "*"
+{%- endif %}
+
+[tool.poetry.dev-dependencies]
+bandit = "*"
+black = "*"
+flake8 = "*"
+flake8-annotations = "*"
+flake8-blind-except = "*"
+flake8-bugbear = "*"
+flake8-docstrings = "*"
+isort = "*"
+jupyter = "*"
+mypy = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+pytest-rerunfailures = "*"
+recommonmark = "*"
+safety = "*"
+sphinx = "*"
+sphinx-autoapi = "*"
+sphinx-rtd-theme = "*"
+sphinxcontrib-napoleon = "*"
+sphinxcontrib-katex = "*"
+types-toml = "*"
+
+[tool.poetry.scripts]
+main = "{{ cookiecutter.project_slug }}.main:main"
+
+[tool.black]
+line_length = 79
+target-version = ['py310']
+
+[tool.coverage.paths]
+source = ["{{ cookiecutter.project_slug }}"]
+
+[tool.isort]
+profile = "black"
+src_paths = ["{{ cookiecutter.project_slug }}", "tests"]
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
